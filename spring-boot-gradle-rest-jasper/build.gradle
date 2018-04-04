@@ -1,0 +1,61 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'spring-boot-gradle-rest-jasper'
+	version = '0.0.1-SNAPSHOT'
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven{url "http://jasperreports.sourceforge.net/maven2/"} 
+    maven{url "https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases"}
+    maven{url "http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts/"}
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootRepackage {
+    enabled = true
+}
+
+
+configurations {
+    jasperreports {
+        transitive = true
+    }
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter',
+	'org.springframework.boot:spring-boot-starter-web')
+	compile 'org.springframework:spring-context-support:4.3.5.RELEASE'
+	compile 'net.sf.jasperreports:jasperreports:6.0.3'
+
+    compile 'com.testautomationguru.pdfutil:pdf-util:0.0.2'
+    
+    compile 'io.springfox:springfox-swagger-ui:2.6.1'
+    compile 'io.springfox:springfox-swagger2:2.6.1'
+    
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+

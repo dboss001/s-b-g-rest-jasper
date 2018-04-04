@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StyledTextReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="c6b75a5e-0483-43df-bccf-83bafdb8c9c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Arial" isDefault="true" fontName="Arial" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="CP1252" isPdfEmbedded="false"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="cfe0445c-4186-4175-98e0-15016a5ed0df">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="street" class="java.lang.String"/>
+		<field name="suite" class="java.lang.String"/>
+		<field name="city" class="java.lang.String"/>
+		<field name="zipcode" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="USER" class="net.db.spring.restreports.domain.report.UserReportData"/>
+	<title>
+		<band height="640" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" x="0" y="0" width="458" height="20" uuid="4b3f4edb-42cd-4ad6-8657-5c4c8704b917"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="a119b591-408a-417a-b132-51e3bdad4a7e">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{USER}.getAddresses())]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="1d31f009-f42d-4bf1-bd09-df276cd2ad94">
+						<jr:tableHeader height="17" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="17" uuid="2118acd1-7c78-473e-bccc-5779c5747f0c"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font fontName="Arial" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Street]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c2eeedb9-2d95-4295-b709-52a724ad72ec"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{street}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="111" uuid="6f43ba69-85d2-436a-bcc8-4499ec798e94">
+						<jr:tableHeader height="17" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="17" uuid="a81b4672-e24e-4daa-a1af-39c5f7a54577"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font fontName="Arial" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Suite]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="111" height="20" uuid="31d83a23-d0d8-45aa-9b49-958c0ea38907"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{suite}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="127" uuid="a36f516f-b78c-4320-8147-7b9dcbb730f3">
+						<jr:tableHeader height="17" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="127" height="17" uuid="df2d2851-65ab-4448-bd79-28f646508295"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font fontName="Arial" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[City]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="127" height="20" uuid="8acd1582-dfc6-4907-8c93-d8ec8e7e422c"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="129" uuid="106117cc-5430-412d-bfea-c3bc0fbddabe">
+						<jr:tableHeader height="17" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="129" height="17" uuid="cedc4f30-eaea-41bb-93a0-7f15866d2bec"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font fontName="Arial" size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ZipCode]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<box>
+								<topPen lineWidth="0.0"/>
+								<leftPen lineWidth="0.0"/>
+								<bottomPen lineWidth="0.0"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement x="0" y="0" width="129" height="20" uuid="3046a8de-0dff-4356-9ee6-399d732e5e16"/>
+								<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+									<topPen lineWidth="0.5" lineColor="#999999"/>
+									<leftPen lineWidth="0.5" lineColor="#999999"/>
+									<bottomPen lineWidth="0.5" lineColor="#999999"/>
+									<rightPen lineWidth="0.5" lineColor="#999999"/>
+								</box>
+								<textElement>
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{zipcode}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</title>
+</jasperReport>
